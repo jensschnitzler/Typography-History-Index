@@ -57,10 +57,25 @@ $(function(){
     ctx.stroke();
   }
 
+  function drawDot(canvas,xMid,yMid){
+    var rad = 4;
+    var ctx = canvas.getContext("2d");
+    ctx.fillStyle = "#000000";
+    ctx.beginPath();
+    ctx.arc(xMid, yMid, rad, 0, 2 * Math.PI);
+    ctx.stroke();
+  }
+
+  function drawText(canvas,x,y,text){
+    var ctx = canvas.getContext("2d");
+    ctx.font = '30px Arial';
+    ctx.fillText(text, x, y);
+  }
+
   drawLine(myCanvas[0],10,0,10,100);
 
+  drawText(myCanvas[0],10,50,'Hello World');
 
-  ctx.font = "30px Arial";
-  ctx.fillText("Hello World", 10, 50);
+  drawDot(myCanvas[0],20,20);
 
 });
