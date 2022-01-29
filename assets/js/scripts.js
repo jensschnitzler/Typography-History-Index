@@ -15,7 +15,7 @@ $(function(){
 
   const th = myTHead.find('th');
 
-  th.find('th').each(function(){
+  th.each(function(){
     var th = $(this);
     var text = th.text();
     var slug = slugify(text);
