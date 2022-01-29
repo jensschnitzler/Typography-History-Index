@@ -13,7 +13,9 @@ $(function(){
   const myTHead = myTable.children('thead');
   const myTBody = myTable.children('tbody');
 
-  myTHead.find('th').each(function(){
+  const th = myTHead.find('th');
+
+  th.find('th').each(function(){
     var th = $(this);
     var text = th.text();
     var slug = slugify(text);
@@ -21,6 +23,13 @@ $(function(){
     console.log({slug});
   });
 
-
+  myTBody.children('tr').each(function(){ // loop rows
+    var tr = $(this);
+    tr.each(function(i){ // loop cells
+      var td = $(this);
+      var id = th.eq(i).data('id');
+      td.attr('data-id',id);
+    });
+  });
 
 });
