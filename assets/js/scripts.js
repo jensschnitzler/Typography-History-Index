@@ -48,7 +48,19 @@ $(function(){
     'border': '1px solid black',
   });
 
+  // Draw
+
+  function drawLine(canvas,x1,y1,x2,y2){
+    var ctx = canvas.getContext("2d");
+    ctx.moveTo(x1,y1);
+    ctx.lineTo(x2,y2);
+    ctx.stroke();
+  }
+
+  drawLine(myCanvas[0],10,0,10,100);
 
 
+  ctx.font = "30px Arial";
+  ctx.fillText("Hello World", 10, 50);
 
 });
