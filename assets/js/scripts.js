@@ -25,7 +25,7 @@ $(function(){
 
   myTBody.children('tr').each(function(){ // loop rows
     var tr = $(this);
-    tr.each(function(i){ // loop cells
+    tr.children('td').each(function(i){ // loop cells
       var td = $(this);
       var id = th.eq(i).data('id');
       td.attr('data-id',id);
