@@ -2,6 +2,7 @@
 @import "variables";
 @import "typography";
 @import "layout";
+@import "table";
 
 @mixin large {
   @media screen and (min-width: #{$large-breakpoint}) {

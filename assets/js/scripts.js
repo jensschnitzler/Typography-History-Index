@@ -32,4 +32,23 @@ $(function(){
     });
   });
 
+  /* --- Add Canvas --- */
+  const myCanvasContainer = $('<div/>');
+  const myCanvas = $('<canvas id="canvas" width=1000 height=1000></canvas>');
+  myCanvasContainer.insertBefore(myTable);
+  myCanvas.appendTo(myCanvasContainer);
+  myCanvasContainer.css({
+    'display': 'block',
+    'margin': 'auto',
+    'height': 'auto',
+  });
+  myCanvas.css({
+    'width': '100%',
+    'height': '100%',
+    'border': '1px solid black',
+  });
+
+
+
+
 });

@@ -6,7 +6,7 @@ title: Typography History Index
 ## Index of Schools, Movements, Styles, Personalities and Typefaces
 
 | Start | End | Title | Description | Category |
-|:---|:---|:---|:---|:---|
+| --- | --- | --- | --- | --- |
 | | | | Epochs | |
 |    0 |  400 | Roman Imperial Period | | Epoch |
 | 1200 | 1600 | Gothic | | Epoch |
