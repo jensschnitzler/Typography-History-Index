@@ -11,7 +11,7 @@ title: Typography History Index
 | 1200 | 1600 | Gothic | | Epoch |
 | 1400 | 1700 | Renaissance & Humanism | | Epoch |
 | 1600 | 1740 | Baroque &Rococo | | Epoch |
-| 18th century | Age of Enlightenment & Neoclassicism | | Epoch |
+| 1700 | 1800 | Age of Enlightenment & Neoclassicism | | Epoch |
 | 1880 | 1920 | Art Nouveau, Arts & Crafts, Jugendstil | | Epoch |
 | 1800 | 1900 | Heimat-style, Historism, Realism, Romanticism | | Epoch |
 | | | | | |
@@ -49,6 +49,7 @@ title: Typography History Index
 | 1914 | 1996 | Paul Rand | | Person |
 | 1920 | 1995 | Aldo Novarese | | Person |
 | 1922 | 1991 | Otto ›Otl‹ Aicher | | Person |
+| 1925 | 1994 | Muriel Cooper | | Person |
 | 1928 | 2015 | Adrian Frutiger | | Person |
 | 1928 | 2019 | Willem Crouwel | | Person |
 | 1931 | 2014 | Massimo Vignelli | | Person |
@@ -83,7 +84,7 @@ title: Typography History Index
 | 1754 |      | Baskerville | John Baskerville | Typeface |
 | 1790 |      | Bodoni | Giambattista Bodoni | Typeface |
 | 1799 |      | Didot | Firmin Didot | Typeface |
-| 1800 |      | Walbaum | Justus Walbaum|
+| 1800 |      | Walbaum | Justus Walbaum | Typeface |
 | 1845 |      | Clarendon | Benjamin Fox | Typeface |
 | 1890 |      | De Vinne | Gustav F. Schroeder | Typeface |
 | 1890 |      | Golden Type | William Morris | Typeface |
@@ -112,7 +113,6 @@ title: Typography History Index
 | 1920 |      | Cooper Black | Oswald B. Cooper | Typeface |
 | 1922 |      | Erbar | Jakob Erbar | Typeface |
 | 1924 |      | Century Schoolbook | Morris Fuller Benton | Typeface |
-| 1925 |      | Muriel Cooper | Typeface |
 | 1925 |      | Universal | Herbert Bayer | Typeface |
 | 1926 |      | DIN | Ludwig Goller | Typeface |
 | 1926 |      | Wilhelm Klingspor Gotisch | Rudolf Koch | Typeface |
