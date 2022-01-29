@@ -7,27 +7,40 @@ title: Typography History Index
 
 | Start | End | Title | Description | Category |
 |:---|:---|:---|:---|:---|
-|    0 |  400 | Roman Empire | | Epoch |
+| | | | Epochs | |
+|    0 |  400 | Roman Imperial Period | | Epoch |
 | 1200 | 1600 | Gothic | | Epoch |
 | 1400 | 1700 | Renaissance & Humanism | | Epoch |
-| 1600 | 1740 | Baroque &Rococo | | Epoch |
+| 1600 | 1740 | Baroque & Rococo | | Epoch |
 | 1700 | 1800 | Age of Enlightenment & Neoclassicism | | Epoch |
-| 1880 | 1920 | Art Nouveau, Arts & Crafts, Jugendstil | | Epoch |
 | 1800 | 1900 | Heimat-style, Historism, Realism, Romanticism | | Epoch |
-| | | | | |
-| 1900 | 1990 | Functionalism, Modernism | | Movement |
-| 1919 | 1933 | Bauhaus | | Movement |
-| 1930 | 1940 | Futurism | | Movement |
-| 1930 | 1940 | Nationalism | | Movement |
-| 1953 | 1968 | Ulmer Schule | | Movement |
-| 1960 | 1970 | Swiss Punk | | Movement |
-| 1960 | 1990 | International Style | | Movement |
-| 1970 |      | Punk | | Movement |
-| 1970 | 1990 | Deconstructivism | | Movement |
-| 1970 | 1990 | Postmodernism | | Movement |
-| 1980 | 1990 | Grunge | | Movement |
-| 2000 | now  | Meta-Modernism | | Movement |
-| | | | | |
+| | | | Phases | |
+| 1880 | 1920 | Art Nouveau, Arts & Crafts, Jugendstil | Artistic Counter-Movements | Phase |
+| 1900 | 1990 | Functionalism, Modernism | | Phase |
+| 1914 | 1918  | 1. World War | | Phase |
+| 1919 | 1933 | Bauhaus | | Phase |
+| 1930 | 1940 | Futurism | | Phase |
+| 1930 | 1945 | Nationalism and 2. World War | | Phase |
+| 1953 | 1968 | Ulmer Schule | | Phase |
+| 1950 | now  | Swiss Design | | Phase |
+| 1960 | 1970 | Swiss Punk | | Phase |
+| 1960 | now  | International Style | | Phase |
+| 1960 | 1990 | Experimental Modernism and Transition to Postmodernism | | Phase |
+| 1970 | 1980 | Punk | | Phase |
+| 1970 | 1990 | Deconstructivism | | Phase |
+| 1970 | 1990 | Postmodernism | | Phase |
+| 1990 | 2010 | Declining Postmodernism | | Phase |
+| 1980 | 1990 | Grunge | | Phase |
+| 2000 | now  | Meta-Modernism | | Phase |
+| | | | Events | |
+| 1932 |      | The Crystal Goblet | | Event |
+| 1946 |      | Typografiestreit der Moderne | | Event |
+| 1971 |      | Sheila Levrant de Bretteville at CalArts | Sheila Levrant de Bretteville establishes the first design program for women at the California Institute of the Arts (CalArts). | Event |
+| 1972 |      | Debate between Wim Crouwel and Jan van Toorn | | Event |
+| 1982 |      | April Greiman at CalArts | April Greiman becomes head of the design department at CalArts. | Event |
+| 1990 |      | Sheila Levrant de Bretteville at Yale School of Art | Sheila Levrant de Bretteville becomes the new director of the Graduate Program in Graphic Design at Yale University. | Event |
+| 1992 |      | Confusion and Chaos: The Seduction of Contemporary Graphic Design | Paul Rand and Armin Hofmann resign from Yale as an act of protest. | Event |
+| | | | Persons |  |
 | 1420 | 1480 | Nicolas Jenson | | Person |
 | 1480 | 1533 | Geoffroy Tory | | Person |
 | 1666 | 1714 | Philippe Grandjean | | Person |
@@ -77,7 +90,7 @@ title: Typography History Index
 | 1970 | now  | Tobias Frere-Jones | | Person |
 | 1973 | now  | Peter Biľak | | Person |
 | 1981 | now  | Kris Sowersby | | Person |
-| | | | | |
+| | | | Typefaces |  |
 | 1496 |      | Bembo | Francesco Griffo | Typeface |
 | 1725 |      | Caslon | William Caslon | Typeface |
 | 1745 |      | Romain du Roi | Philippe Grandjean & a comite by king Louis XIV | Typeface |
