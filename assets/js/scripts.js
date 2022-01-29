@@ -78,4 +78,6 @@ $(function(){
 
   drawDot(myCanvas[0],20,20);
 
+  
+
 });
