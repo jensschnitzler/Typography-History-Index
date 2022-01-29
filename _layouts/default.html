@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="{{ site.lang | default: "en-US" }}">
+  {%- include head.html -%}
+  <body>
+    {%- include header.html -%}
+    <main id="content" class="main-content" role="main">
+      {{ content }}
+    </main>
+    {%- include footer.html -%}
+    <!-- Remote Scripts -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <!-- Local Scripts -->
+    <script src="assets/js/scripts.js"></script>
+  </body>
+</html>
