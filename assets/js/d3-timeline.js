@@ -686,23 +686,13 @@
 
 
 var labelColorTestData = [
-  {label: "Epochs", times: [
-    {"color":"green", "label":"Weeee", "starting_time": 1355752800000, "ending_time": 1355759900000},
-    {"color":"blue", "label":"Weeee", "starting_time": 1355767900000, "ending_time": 1355774400000}]},
-  {label: "Phases", times: [
+  {class:"epochs", label: "Epochs", times: [
+    {"color":"green", "label":"Weeee", "starting_time": -59011462408000, "ending_time": -55855788808000},
+    {"color":"blue", "label":"Weeee", "starting_time": -49544441608000, "ending_time": -36921660808000}]},
+  {class:"phases", label: "Phases", times: [
     {"color":"pink", "label":"Weeee", "starting_time": 1355759910000, "ending_time": 1355761900000},]},
-  {label: "Events", times: [
+  {class:"events", label: "Events", times: [
     {"color":"yellow", "label":"Weeee", "starting_time": 1355761910000, "display":"circle"}]}
-];
-
-var iconTestData = [
-  {class:"jackie", icon: "jackie.png", times: [
-    {"starting_time": -59011462408000, "ending_time": -55855788808000},
-    {"starting_time": -49544441608000, "ending_time": -36921660808000}]},
-  {class:"troll", icon: "troll.png", times: [
-    {"starting_time": 1355759910000, "ending_time": 1355761900000, "display":"circle"}, ]},
-  {class:"wat", icon: "wat.png", times: [
-    {"starting_time": 1355761910000, "ending_time": 1355763910000}]}
 ];
 
 var width = 500;
