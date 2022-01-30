@@ -35,6 +35,14 @@ $(function(){
       var td = $(this);
       var id = th.eq(i).data('id');
       td.attr('data-id',id);
+
+      if(id == 'category'){
+        if(td.val().length > 0){
+          tr.attr('data-cat',category);
+        } else {
+          tr.addClass('empty-row');
+        }
+      }
     });
   });
 
@@ -48,7 +56,8 @@ $(function(){
 
   const ctx = myCanvas[0].getContext("2d");
 
-  var vw = window.innerWidth; // size canvas width according to viewport width! redraw again on resize.
+  var width = Math.floor( window.innerWidth ); // size canvas width according to viewport width! redraw again on resize.
+  var height = 2000;
 
   myCanvasContainer.css({
     'display': 'block',
@@ -56,9 +65,10 @@ $(function(){
     'height': 'auto',
   });
   myCanvas.css({
-    'width': vw + 'px',
-    'height': '2000px',
-    'border': '1px solid black',
+    'width': width + 'px',
+    'height': height + 'px',
+    'aspect-ratio': 'auto ' + width + ' / ' + height;
+    //'border': '1px solid black',
   });
 
   // Draw
@@ -89,11 +99,20 @@ $(function(){
   drawDot(20,20);
 
   function drawTimeline(table){
-    myTBody.children('tr').each(function(){ // loop rows
+    myTBody.children('tr:not(".empty-row")').each(function(){ // loop rows
       var tr = $(this);
-      tr.children('td').each(function(i){ // loop cells
-        var td = $(this);
-      });
+      var start = parseInt( tr.children('td[data-id="start"]').text() );
+      var end = parseInt( tr.children('td[data-id="end"]').text() );
+      var title = tr.children('td[data-id="title"]').text();
+      var desc = tr.children('td[data-id="title"]').text();
+      var category = tr.children('td[data-id="title"]').text();
+
+      if(category.length > 0){
+        tr.attr('data-cat',category);
+      } else {
+        tr.addClass('empty-row');
+      }
+
     });
   }
 

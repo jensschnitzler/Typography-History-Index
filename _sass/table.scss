@@ -9,5 +9,12 @@ table {
   width: 100%;
   th,td {
     text-align: left;
+    paddin: .05rem;
+  }
+  tr {
+    border-top: 1px solid black;
+    &:last-child {
+      border-bottom: 1px solid black;
+    }
   }
 }
