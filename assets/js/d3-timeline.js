@@ -684,24 +684,17 @@
   };
 })();
 
-/*
-var testData = [
-  {times: [{"starting_time": 1355752800000, "ending_time": 1355759900000}, {"starting_time": 1355767900000, "ending_time": 1355774400000}]},
-  {times: [{"starting_time": 1355759910000, "ending_time": 1355761900000}, ]},
-  {times: [{"starting_time": 1355761910000, "ending_time": 1355763910000}]}
+
+var labelColorTestData = [
+  {label: "Epochs", times: [
+    {"color":"green", "label":"Weeee", "starting_time": 1355752800000, "ending_time": 1355759900000},
+    {"color":"blue", "label":"Weeee", "starting_time": 1355767900000, "ending_time": 1355774400000}]},
+  {label: "Phases", times: [
+    {"color":"pink", "label":"Weeee", "starting_time": 1355759910000, "ending_time": 1355761900000},]},
+  {label: "Events", times: [
+    {"color":"yellow", "label":"Weeee", "starting_time": 1355761910000, "display":"circle"}]}
 ];
-var rectAndCircleTestData = [
-  {times: [{"starting_time": 1355752800000,
-           "display": "circle"}, {"starting_time": 1355767900000, "ending_time": 1355774400000}]},
-  {times: [{"starting_time": 1355759910000,
-  "display":"circle"}, ]},
-  {times: [{"starting_time": 1355761910000, "ending_time": 1355763910000}]}
-];
-var labelTestData = [
-  {label: "person a", times: [{"starting_time": 1355752800000, "ending_time": 1355759900000}, {"starting_time": 1355767900000, "ending_time": 1355774400000}]},
-  {label: "person b", times: [{"starting_time": 1355759910000, "ending_time": 1355761900000}, ]},
-  {label: "person c", times: [{"starting_time": 1355761910000, "ending_time": 1355763910000}]}
-];
+
 var iconTestData = [
   {class:"jackie", icon: "jackie.png", times: [
     {"starting_time": 1355752800000, "ending_time": 1355759900000},
@@ -713,40 +706,11 @@ var iconTestData = [
     {"starting_time": 1355761910000, "ending_time": 1355763910000}]}
 ];
 
-var testDataWithColor = [
-  {label: "fruit 1", fruit: "orange", times: [
-    {"starting_time": 1355759910000, "ending_time": 1355761900000}]},
-  {label: "fruit 2", fruit: "apple", times: [
-    {"starting_time": 1355752800000, "ending_time": 1355759900000},
-    {"starting_time": 1355767900000, "ending_time": 1355774400000}]},
-  {label: "fruit3", fruit: "lemon", times: [
-    {"starting_time": 1355761910000, "ending_time": 1355763910000}]}
-  ];
-var testDataWithColorPerTime = [
-  {label: "fruit 2", fruit: "apple", times: [
-    {fruit: "orange", "starting_time": 1355752800000, "ending_time": 1355759900000},
-    {"starting_time": 1355767900000, "ending_time": 1355774400000},
-    {fruit: "lemon", "starting_time": 1355774400000, "ending_time": 1355775500000}]}
-  ];
-var testDataRelative = [
-  {times: [{"starting_time": 1355752800000, "ending_time": 1355759900000}, {"starting_time": 1355767900000, "ending_time": 1355774400000}]},
-  {times: [{"starting_time": 1355759910000, "ending_time": 1355761900000}]},
-  {times: [{"starting_time": 1355761910000, "ending_time": 1355763910000}]}
-];
-
-*/
-
-var labelColorTestData = [
-  {label: "person a", times: [{"color":"green", "label":"Weeee", "starting_time": 1355752800000, "ending_time": 1355759900000}, {"color":"blue", "label":"Weeee", "starting_time": 1355767900000, "ending_time": 1355774400000}]},
-  {label: "person b", times: [{"color":"pink", "label":"Weeee", "starting_time": 1355759910000, "ending_time": 1355761900000}, ]},
-  {label: "person c", times: [{"color":"yellow", "label":"Weeee", "starting_time": 1355761910000, "ending_time": 1355763910000}]}
-];
-
 var width = 500;
 
 function timelineStackedIcons() {
   var chart = d3.timeline()
-    .beginning(1355752800000) // we can optionally add beginning and ending times to speed up rendering a little
+    .beginning(0000000000000) // we can optionally add beginning and ending times to speed up rendering a little
     .ending(1355774400000)
     //.showTimeAxisTick() // toggles tick marks
     .stack() // toggles graph stacking
