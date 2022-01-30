@@ -40,7 +40,8 @@ $(function(){
         var val = td.text();
         console.log({val});
         if(val.length > 0){
-          tr.attr('data-cat',category);
+          var cat = slugify(val);
+          tr.attr('data-cat',cat);
         } else {
           tr.addClass('empty-row');
         }
