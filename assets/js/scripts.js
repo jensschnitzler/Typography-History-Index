@@ -99,20 +99,19 @@ $(function(){
   drawDot(20,20);
 
   function drawTimeline(table){
-    myTBody.children('tr:not(".empty-row")').each(function(){ // loop rows
+    myTBody.children('tr:not(".empty-row")').each(function(i){ // loop rows
       var tr = $(this);
-      var start = parseInt( tr.children('td[data-id="start"]').text() );
-      var end = parseInt( tr.children('td[data-id="end"]').text() );
+      console.log(i);
+      var start = parseInt( tr.children('td[data-id="start"]').val() );
+      console.log({start});
+      var end = parseInt( tr.children('td[data-id="end"]').val() );
+      console.log({end});
       var title = tr.children('td[data-id="title"]').text();
+      console.log({title});
       var desc = tr.children('td[data-id="title"]').text();
+      console.log({desc});
       var category = tr.children('td[data-id="title"]').text();
-
-      if(category.length > 0){
-        tr.attr('data-cat',category);
-      } else {
-        tr.addClass('empty-row');
-      }
-
+      console.log({category});
     });
   }
 

@@ -3,6 +3,7 @@
 @import "typography";
 @import "layout";
 @import "table";
+@import "scrollbars";
 
 @mixin large {
   @media screen and (min-width: #{$large-breakpoint}) {
