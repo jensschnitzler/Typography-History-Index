@@ -75,8 +75,9 @@ $(function(){
   var width = Math.floor( window.innerWidth ); // size canvas width according to viewport width! redraw again on resize.
   var height = 2000;
   const ctx = myCanvas[0].getContext("2d");
-  ctx.canvas.width = width;
-  ctx.canvas.height = height;
+  var scale = 2; // to improve resolution
+  ctx.canvas.width = width * scale;
+  ctx.canvas.height = height * scale;
 
   // Draw
 
@@ -99,25 +100,24 @@ $(function(){
     ctx.fillText(text, x, y);
   }
 
+  // test:
   drawLine(10,0,10,100);
-
   drawText(10,50,'Hello World');
-
   drawDot(20,20);
 
   function drawTimeline(){
     myTBody.children('tr:not(".empty-row")').each(function(i){ // loop rows
       var tr = $(this);
       console.log(i);
-      var start = parseInt( tr.children('td[data-id="start"]').val() );
+      var start = parseInt( tr.children('td[data-id="start"]').text() );
       console.log({start});
-      var end = parseInt( tr.children('td[data-id="end"]').val() );
+      var end = parseInt( tr.children('td[data-id="end"]').text() );
       console.log({end});
       var title = tr.children('td[data-id="title"]').text();
       console.log({title});
-      var desc = tr.children('td[data-id="title"]').text();
+      var desc = tr.children('td[data-id="description"]').text();
       console.log({desc});
-      var category = tr.children('td[data-id="title"]').text();
+      var category = tr.children('td[data-id="category"]').text();
       console.log({category});
     });
   }
