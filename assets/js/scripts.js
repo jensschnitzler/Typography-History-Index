@@ -43,8 +43,10 @@ $(function(){
   const myCanvas = $('<canvas id="canvas" width=1000 height=1000></canvas>');
 
   myTable.wrap(myCanvasContainer);
-  //myCanvasContainer.insertBefore(myTable);
-  myCanvas.prependTo(myCanvasContainer);
+  myCanvas.insertBefore(myTable);
+  //myCanvas.prependTo(myCanvasContainer);
+
+  const ctx = myCanvas[0].getContext("2d");
 
   var vw = window.innerWidth; // size canvas width according to viewport width! redraw again on resize.
 
@@ -61,33 +63,39 @@ $(function(){
 
   // Draw
 
-  function drawLine(canvas,x1,y1,x2,y2){
-    var ctx = canvas.getContext("2d");
+  function drawLine(x1,y1,x2,y2){
     ctx.moveTo(x1,y1);
     ctx.lineTo(x2,y2);
     ctx.stroke();
   }
 
-  function drawDot(canvas,xMid,yMid){
+  function drawDot(xMid,yMid){
     var rad = 4;
-    var ctx = canvas.getContext("2d");
     ctx.fillStyle = "#000000";
     ctx.beginPath();
     ctx.arc(xMid, yMid, rad, 0, 2 * Math.PI);
     ctx.stroke();
   }
 
-  function drawText(canvas,x,y,text){
-    var ctx = canvas.getContext("2d");
+  function drawText(x,y,text){
     ctx.font = '30px Arial';
     ctx.fillText(text, x, y);
   }
 
-  drawLine(myCanvas[0],10,0,10,100);
+  drawLine(10,0,10,100);
 
-  drawText(myCanvas[0],10,50,'Hello World');
+  drawText(10,50,'Hello World');
 
-  drawDot(myCanvas[0],20,20);
+  drawDot(20,20);
+
+  function drawTimeline(table){
+    myTBody.children('tr').each(function(){ // loop rows
+      var tr = $(this);
+      tr.children('td').each(function(i){ // loop cells
+        var td = $(this);
+      });
+    });
+  }
 
 
 
