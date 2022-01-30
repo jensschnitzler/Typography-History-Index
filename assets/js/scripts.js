@@ -67,7 +67,7 @@ $(function(){
   myCanvas.css({
     'width': width + 'px',
     'height': height + 'px',
-    'aspect-ratio': 'auto ' + width + ' / ' + height;
+    'aspect-ratio': 'auto ' + width + ' / ' + height,
     //'border': '1px solid black',
   });
 

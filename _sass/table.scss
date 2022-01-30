@@ -1,15 +1,16 @@
 table, table * {
   //display: block;
-  box-sizing: border-box;
+  //box-sizing: border-box;
   padding: 0;
   margin: 0;
 }
 
 table {
   width: 100%;
+  border-collapse: collapse;
   th,td {
     text-align: left;
-    paddin: .05rem;
+    padding: .05rem;
   }
   tr {
     border-top: 1px solid black;
