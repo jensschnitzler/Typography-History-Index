@@ -15,13 +15,19 @@ $(function(){
 
   const th = myTHead.find('th');
 
+  const idArray = [];
+
   th.each(function(){
     var th = $(this);
     var text = th.text();
-    var slug = slugify(text);
-    th.attr('data-id',slug);
-    console.log({slug});
+    var id = slugify(text);
+    th.attr('data-id',id);
+    //console.log({id});
+    if(idArray.indexOf(id) === -1) {
+      idArray.push(id);
+    }
   });
+  console.log({idArray});
 
   myTBody.children('tr').each(function(){ // loop rows
     var tr = $(this);
@@ -33,18 +39,23 @@ $(function(){
   });
 
   /* --- Add Canvas --- */
-  const myCanvasContainer = $('<div/>');
+  const myCanvasContainer = $('<div/>').addClass('graph-container');
   const myCanvas = $('<canvas id="canvas" width=1000 height=1000></canvas>');
-  myCanvasContainer.insertBefore(myTable);
-  myCanvas.appendTo(myCanvasContainer);
+
+  myTable.wrap(myCanvasContainer);
+  //myCanvasContainer.insertBefore(myTable);
+  myCanvas.prependTo(myCanvasContainer);
+
+  var vw = window.innerWidth; // size canvas width according to viewport width! redraw again on resize.
+
   myCanvasContainer.css({
     'display': 'block',
     'margin': 'auto',
     'height': 'auto',
   });
   myCanvas.css({
-    'width': '100%',
-    'height': '100%',
+    'width': vw + 'px',
+    'height': '2000px',
     'border': '1px solid black',
   });
 
@@ -78,6 +89,6 @@ $(function(){
 
   drawDot(myCanvas[0],20,20);
 
-  
+
 
 });
