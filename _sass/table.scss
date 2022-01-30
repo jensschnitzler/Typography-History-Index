@@ -17,5 +17,9 @@ table {
     &:last-child {
       border-bottom: 1px solid black;
     }
+    &.empty-row {
+      background-color: rgb(160,160,160);
+      font-style: italic;
+    }
   }
 }

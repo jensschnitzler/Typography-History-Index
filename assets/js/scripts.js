@@ -37,7 +37,7 @@ $(function(){
       td.attr('data-id',id);
 
       if(id == 'category'){
-        var val = td.val();
+        var val = td.text();
         console.log({val});
         if(val.length > 0){
           tr.attr('data-cat',category);
@@ -56,22 +56,26 @@ $(function(){
   myCanvas.insertBefore(myTable);
   //myCanvas.prependTo(myCanvasContainer);
 
-  const ctx = myCanvas[0].getContext("2d");
-
-  var width = Math.floor( window.innerWidth ); // size canvas width according to viewport width! redraw again on resize.
-  var height = 2000;
-
   myCanvasContainer.css({
     'display': 'block',
     'margin': 'auto',
     'height': 'auto',
   });
   myCanvas.css({
-    'width': width + 'px',
-    'height': height + 'px',
-    'aspect-ratio': 'auto ' + width + ' / ' + height,
+    //'width': width + 'px',
+    //'height': height + 'px',
+    //'aspect-ratio': 'auto ' + width + ' / ' + height,
+    'width': '100%',
+    'height':'100%',
+    'position': 'relative',
     //'border': '1px solid black',
   });
+
+  var width = Math.floor( window.innerWidth ); // size canvas width according to viewport width! redraw again on resize.
+  var height = 2000;
+  const ctx = myCanvas[0].getContext("2d");
+  ctx.canvas.width = width;
+  ctx.canvas.height = height;
 
   // Draw
 
