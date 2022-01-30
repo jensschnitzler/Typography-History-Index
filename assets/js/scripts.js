@@ -38,7 +38,7 @@ $(function(){
 
       if(id == 'category'){
         var val = td.text();
-        console.log({val});
+        //console.log({val});
         if(val.length > 1){
           var cat = slugify(val);
           tr.attr('data-cat',cat);
@@ -105,7 +105,7 @@ $(function(){
 
   drawDot(20,20);
 
-  function drawTimeline(table){
+  function drawTimeline(){
     myTBody.children('tr:not(".empty-row")').each(function(i){ // loop rows
       var tr = $(this);
       console.log(i);
@@ -121,6 +121,8 @@ $(function(){
       console.log({category});
     });
   }
+
+  drawTimeline();
 
 
 
