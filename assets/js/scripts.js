@@ -37,7 +37,9 @@ $(function(){
       td.attr('data-id',id);
 
       if(id == 'category'){
-        if(td.val().length > 0){
+        var val = td.val();
+        console.log({val});
+        if(val.length > 0){
           tr.attr('data-cat',category);
         } else {
           tr.addClass('empty-row');
