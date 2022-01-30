@@ -697,11 +697,10 @@ var labelColorTestData = [
 
 var iconTestData = [
   {class:"jackie", icon: "jackie.png", times: [
-    {"starting_time": 1355752800000, "ending_time": 1355759900000},
-    {"starting_time": 1355767900000, "ending_time": 1355774400000}]},
+    {"starting_time": -59011462408000, "ending_time": -55855788808000},
+    {"starting_time": -49544441608000, "ending_time": -36921660808000}]},
   {class:"troll", icon: "troll.png", times: [
-    {"starting_time": 1355759910000, "ending_time": 1355761900000,
-    "display":"circle"}, ]},
+    {"starting_time": 1355759910000, "ending_time": 1355761900000, "display":"circle"}, ]},
   {class:"wat", icon: "wat.png", times: [
     {"starting_time": 1355761910000, "ending_time": 1355763910000}]}
 ];
@@ -710,8 +709,8 @@ var width = 500;
 
 function timelineStackedIcons() {
   var chart = d3.timeline()
-    .beginning(0000000000000) // we can optionally add beginning and ending times to speed up rendering a little
-    .ending(1355774400000)
+    //.beginning(0000000000000) // we can optionally add beginning and ending times to speed up rendering a little
+    //.ending(1355774400000)
     //.showTimeAxisTick() // toggles tick marks
     .stack() // toggles graph stacking
     .margin({left:70, right:30, top:0, bottom:0});
