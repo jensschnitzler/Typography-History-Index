@@ -39,7 +39,7 @@ $(function(){
       if(id == 'category'){
         var val = td.text();
         console.log({val});
-        if(val.length > 0){
+        if(val.length > 1){
           var cat = slugify(val);
           tr.attr('data-cat',cat);
         } else {
