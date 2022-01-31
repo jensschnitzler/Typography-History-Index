@@ -53,7 +53,7 @@ To make yourself familiar with these components try to
 
 // Define domElement and sourceFile
 var domElement = "#timeline";
-var sourceFile = "/philosophers.csv";
+var sourceFile = "philosophers.csv";
 
 // Read in the data and construct the timeline
 d3.csv(sourceFile, function(dataset) {
