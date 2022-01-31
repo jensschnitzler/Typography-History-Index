@@ -87,7 +87,7 @@ $(function(){
 
   const categoryArray = [];
 
-  myTBody.children('tr:not(".empty-row")').slice(2,4).each(function(i){ // loop rows
+  myTBody.children('tr:not(".empty-row")').slice(0,4).each(function(i){ // loop rows
     var tr = $(this);
     //console.log(i);
     var start = tr.children('td[data-id="start"]').first().text().trim();
@@ -128,6 +128,8 @@ $(function(){
         console.log({end});
         //newArray.push({end:end + '-01-01'}); // new Date(end,1,1)
         newArray['end'] = new Date(Date.parse(end + '-01-01'));
+      } else {
+        newArray['type'] = 'point';
       }
       // Group
       //newArray.push({group:category});
@@ -144,8 +146,8 @@ $(function(){
   console.log({categoryArray});
 
   var groups = [
-    {id: 1, content: 'Group 1'}, // Optional: a field 'className', 'style', 'order', [properties]
-    {id: 2, content: 'Group 2'},
+    //{id: 1, content: 'Group 1'}, // Optional: a field 'className', 'style', 'order', [properties]
+    //{id: 2, content: 'Group 2'},
   ];
 
   $.each(categoryArray, function( index, val ) {
