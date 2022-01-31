@@ -66,7 +66,7 @@ $(function(){
   });
 
   var width = Math.floor( window.innerWidth ); // size canvas width according to viewport width! redraw again on resize.
-  var height = 100;
+  var height = Math.floor( window.innerHeight );
 
   /* --- Initiate Vis.js --- */
 

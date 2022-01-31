@@ -11,10 +11,11 @@ var items = new vis.DataSet([
 // Configuration for the Timeline
 var options = {
   width: '100%',
-  //height: '30px',
-  margin: {
-    item: 20
-  }
+  height: '100%',
+  autoResize: true,
+  start: new Date(0,1,1),
+  end: new Date(2022,1,1),
+  //margin: { item: 20 }
 };
 
 var groups = [
