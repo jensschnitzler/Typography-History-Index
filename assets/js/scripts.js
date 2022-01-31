@@ -51,11 +51,13 @@ $(function(){
   /* --- Add Visualization DOM Elements --- */
 
   const myVisContainer = $('<div/>').addClass('vis-container');
+  const myVisNav = $('<div/>').addClass('vis-nav');
   const myVis = $('<div id="visualization"></div>');
 
   myTable.parent().children().wrapAll(myVisContainer);
   //myVis.prependTo(myVisContainer);
   myVis.insertBefore( myTable.parent().children().first() );
+  myVisNav.appendTo(myVis);
 
   myVisContainer.css({
     'display': 'block',
@@ -71,6 +73,17 @@ $(function(){
     'width': '100vw',
     'max-width': '100%',
     'height': '100vh',
+  });
+
+  myVisNav.css({
+    'display': 'block',
+    'margin': 'auto',
+    'width': 'auto',
+    'max-width': '100%',
+    'height': 'auto',
+    'position': 'fixed',
+    'top': '0',
+    'right': '0',
   });
 
   var width = Math.floor( window.innerWidth ); // size canvas width according to viewport width! redraw again on resize.
@@ -110,8 +123,6 @@ $(function(){
 
       //newArray.push({content:title});
       newArray['content'] = title;
-
-
 
       // Start
       start = start.padStart(4, '0'); // add leading zeros, returns 0123
@@ -157,9 +168,19 @@ $(function(){
   $.each(categoryArray, function( index, val ) {
     //console.log( index + ": " + value );
     groups.push({id: val, content: val , className: 'g_'+val});
+    var newNavItem = $('<div><label class="switch" data-id="g_' + val + '"><input type="checkbox"><span>' + val + '</span></label></div>')
+    newNavItem.appendTo(myVisNav);
   });
 
   console.log({groups});
+
+  /* --- Vis Nav --- */
+
+  $(document).on("click",".vis-nav .switch",function() {
+    var navItem = $(this);
+    var id = navItem.data('id');
+    $('.vis-timeline').find('.'+id).toggle();
+  });
 
   /* --- Initiate Vis.js --- */
 
