@@ -168,7 +168,7 @@ $(function(){
   $.each(categoryArray, function( index, val ) {
     //console.log( index + ": " + value );
     groups.push({id: val, content: val , className: 'g_'+val});
-    var newNavItem = $('<div><label class="switch" data-id="g_' + val + '"><input type="checkbox"><span>' + val + '</span></label></div>')
+    var newNavItem = $('<div><label class="switch" data-id="g_' + val + '"><input type="checkbox" checked><span>' + val + '</span></label></div>')
     newNavItem.appendTo(myVisNav);
   });
 
@@ -177,6 +177,7 @@ $(function(){
   /* --- Vis Nav --- */
 
   $(document).on("click",".vis-nav .switch",function() {
+    console.log('switch clicked');
     var navItem = $(this);
     var id = navItem.data('id');
     $('.vis-timeline').find('.'+id).toggle();
