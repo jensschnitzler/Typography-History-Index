@@ -63,6 +63,14 @@ $(function(){
     'height': '100vh',
   });
 
+  myVis.css({
+    'display': 'block',
+    'margin': 'auto',
+    'width': '100vw',
+    'max-width': '100%',
+    'height': '100vh',
+  });
+
   var width = Math.floor( window.innerWidth ); // size canvas width according to viewport width! redraw again on resize.
   var height = Math.floor( window.innerHeight );
 
@@ -84,7 +92,17 @@ $(function(){
     var category = tr.children('td[data-id="category"]').text().trim();
     //console.log({category});
 
-    var newArray = [];
+    var newArray = {};
+
+    newArray.push({id:i});
+    newArray.push({content:title});
+    newArray.push({start:new Date(start,1,1)});
+
+    if(end != undefined && end.length > 0){
+      newArray.push({end:new Date(end,1,1)});
+    }
+
+    itemsArray.push(newArray);
   });
 
   /* --- Initiate Vis.js --- */
