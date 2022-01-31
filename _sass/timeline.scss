@@ -14,8 +14,11 @@
     &.vis-range {
       background-color: pink;
     }
-    & .vis-item-overflow {
+    .vis-item-overflow {
       overflow: visible;
+    }
+    .vis-item-content {
+      padding: 4px 8px 4px;
     }
   }
 
@@ -30,12 +33,12 @@
   }
 
   .vis-item.vis-selected {
-    border-color: purple;
-    background-color: pink;
+    border-color: lime;
+    background-color: lime;
   }
 
   .vis-time-axis .vis-text {
-    color: purple;
+    color: black;
     padding-top: 10px;
     padding-left: 10px;
   }
@@ -52,5 +55,10 @@
   .vis-time-axis .vis-grid.vis-major {
     border-width: 2px;
     border-color: purple;
+  }
+
+  .vis-label {
+    background: red;
+    cursor: pointer;
   }
 }
