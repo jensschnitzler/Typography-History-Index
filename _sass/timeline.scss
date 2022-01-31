@@ -28,13 +28,27 @@
   }
 
   .vis-item.vis-dot {
-    border-width: 10px;
-    border-radius: 10px;
+    //border-width: 10px;
+    //border-radius: 10px;
+    // css triangle:
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 10px solid purple;
   }
 
   .vis-item.vis-selected {
-    border-color: lime;
-    background-color: lime;
+
+    &.vis-range {
+      border-color: lime;
+      background-color: lime;
+    }
+    &.vis-point {
+      .vis-dot {
+        border-top: 10px solid lime;
+      }
+    }
   }
 
   .vis-time-axis .vis-text {
@@ -60,5 +74,9 @@
   .vis-label {
     background: red;
     cursor: pointer;
+  }
+
+  .vis-group.g_Typeface {
+    opacity: .5;
   }
 }

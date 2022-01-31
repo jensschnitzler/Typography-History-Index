@@ -110,7 +110,8 @@ $(function(){
 
       //newArray.push({content:title});
       newArray['content'] = title;
-      newArray['title'] = start + ': ' + title; // tooltip
+
+
 
       // Start
       start = start.padStart(4, '0'); // add leading zeros, returns 0123
@@ -129,8 +130,10 @@ $(function(){
         console.log({end});
         //newArray.push({end:end + '-01-01'}); // new Date(end,1,1)
         newArray['end'] = new Date(Date.parse(end + '-01-01'));
+        newArray['title'] = start + '–' + end + ' ' + title; // tooltip
       } else {
         newArray['type'] = 'point';
+        newArray['title'] = start + ' ' + title; // tooltip
       }
       // Group
       //newArray.push({group:category});
