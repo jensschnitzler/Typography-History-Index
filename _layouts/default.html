@@ -5,7 +5,7 @@
     {%- include header.html -%}
 
     <div>
-      <h3>We can also use icons</h3>
+      <div id="visualization"></div>
       <div id="timeline"></div>
     </div>
 
@@ -22,5 +22,12 @@
     <!--<script src="{{ '/assets/js/d3-timeline.js?v=' | append: site.github.build_revision | relative_url }}"></script>-->
     <script src="{{ '/assets/js/d3-timeline-rengel.js?v=' | append: site.github.build_revision | relative_url }}"></script>
     <script src="{{ '/assets/js/d3-timeline-rengel-init.js?v=' | append: site.github.build_revision | relative_url }}"></script>
+
+    <!-- Vis.js -->
+
+    <script type="text/javascript" src="https://unpkg.com/vis-timeline@latest/standalone/umd/vis-timeline-graph2d.min.js"></script>
+    <link href="https://unpkg.com/vis-timeline@latest/styles/vis-timeline-graph2d.min.css" rel="stylesheet" type="text/css" />
+    <script src="{{ '/assets/js/init-vis.js?v=' | append: site.github.build_revision | relative_url }}"></script>
+
   </body>
 </html>
