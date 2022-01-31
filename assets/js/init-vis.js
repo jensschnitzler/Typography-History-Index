@@ -11,7 +11,7 @@ var items = new vis.DataSet([
 // Configuration for the Timeline
 var options = {
   width: '100%',
-  height: '30px',
+  //height: '30px',
   margin: {
     item: 20
   }

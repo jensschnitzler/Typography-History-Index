@@ -17,6 +17,8 @@ $(function(){
 
   const idArray = [];
 
+  /* --- Prepare Table --- */
+
   th.each(function(){
     var th = $(this);
     var text = th.text();
@@ -49,78 +51,22 @@ $(function(){
     });
   });
 
-  /* --- Add Canvas --- */
-  const myCanvasContainer = $('<div/>').addClass('graph-container');
-  const myCanvas = $('<canvas id="canvas" width=1000 height=1000></canvas>');
+  /* --- Add Visualization --- */
 
-  myTable.wrap(myCanvasContainer);
-  myCanvas.insertBefore(myTable);
-  //myCanvas.prependTo(myCanvasContainer);
+  const myVisContainer = $('<div/>').addClass('graph-container');
+  const myVis = $('<div id="visualization"></div>');
 
-  myCanvasContainer.css({
+  myTable.wrap(myVisContainer);
+  myVis.insertBefore(myTable);
+
+  myVisContainer.css({
     'display': 'block',
     'margin': 'auto',
     'height': 'auto',
   });
-  myCanvas.css({
-    //'width': width + 'px',
-    //'height': height + 'px',
-    //'aspect-ratio': 'auto ' + width + ' / ' + height,
-    'width': '100%',
-    'height':'100%',
-    'position': 'relative',
-    //'border': '1px solid black',
-  });
 
   var width = Math.floor( window.innerWidth ); // size canvas width according to viewport width! redraw again on resize.
   var height = 100;
-  const ctx = myCanvas[0].getContext("2d");
-  var scale = 2; // to improve resolution
-  ctx.canvas.width = width * scale;
-  ctx.canvas.height = height * scale;
 
-  // Draw
 
-  function drawLine(x1,y1,x2,y2){
-    ctx.moveTo(x1,y1);
-    ctx.lineTo(x2,y2);
-    ctx.stroke();
-  }
-
-  function drawDot(xMid,yMid){
-    var rad = 4;
-    ctx.fillStyle = "#000000";
-    ctx.beginPath();
-    ctx.arc(xMid, yMid, rad, 0, 2 * Math.PI);
-    ctx.stroke();
-  }
-
-  function drawText(x,y,text){
-    ctx.font = '30px Arial';
-    ctx.fillText(text, x, y);
-  }
-
-  // test:
-  drawLine(10,0,10,100);
-  drawText(10,50,'Hello World');
-  drawDot(20,20);
-
-  function drawTimeline(){
-    myTBody.children('tr:not(".empty-row")').each(function(i){ // loop rows
-      var tr = $(this);
-      console.log(i);
-      var start = parseInt( tr.children('td[data-id="start"]').text() );
-      console.log({start});
-      var end = parseInt( tr.children('td[data-id="end"]').text() );
-      console.log({end});
-      var title = tr.children('td[data-id="title"]').text();
-      console.log({title});
-      var desc = tr.children('td[data-id="description"]').text();
-      console.log({desc});
-      var category = tr.children('td[data-id="category"]').text();
-      console.log({category});
-    });
-  }
-
-  //drawTimeline();
 });
