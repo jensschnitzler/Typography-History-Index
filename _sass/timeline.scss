@@ -1,3 +1,5 @@
+$highlight: rgb(255,0,200);
+
 #visualization {
   .vis-timeline {
     border: 0;
@@ -41,12 +43,12 @@
   .vis-item.vis-selected {
 
     &.vis-range {
-      border-color: lime;
-      background-color: lime;
+      border-color: $highlight;
+      background-color: $highlight;
     }
     &.vis-point {
       .vis-dot {
-        border-top-color: lime;
+        border-top-color: $highlight;
       }
     }
   }

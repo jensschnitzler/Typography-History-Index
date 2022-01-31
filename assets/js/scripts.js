@@ -97,7 +97,7 @@ $(function(){
 
   const categoryArray = [];
 
-  myTBody.children('tr:not(".empty-row")').slice(0,100).each(function(i){ // loop rows
+  myTBody.children('tr:not(".empty-row")').each(function(i){ // loop rows // .slice(0,100)
     var tr = $(this);
     //console.log(i);
     var start = tr.children('td[data-id="start"]').first().text().trim();
@@ -130,6 +130,7 @@ $(function(){
       // End
       //console.log(end.length);
       if(end.length > 0){
+        newArray['title'] = start + '–' + end + ' ' + title; // tooltip
         if(end == 'now'){
           end = yearCurrent; // returns the current year
         } else {
@@ -138,7 +139,7 @@ $(function(){
         //console.log({end});
         //newArray.push({end:end + '-01-01'}); // new Date(end,1,1)
         newArray['end'] = new Date(Date.parse(end + '-01-01'));
-        newArray['title'] = start + '–' + end + ' ' + title; // tooltip
+
       } else {
         newArray['type'] = 'point';
         newArray['title'] = start + ' ' + title; // tooltip
