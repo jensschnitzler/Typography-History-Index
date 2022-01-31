@@ -62,14 +62,15 @@ $(function(){
     'margin': 'auto',
     'width': '100vw',
     'max-width': '100%',
-    'height': 'auto',
+    'height': '100vh',
   });
 
   myVis.css({
     'display': 'block',
     'margin': 'auto',
-    'width': '100%',
-    'min-height': '100vh',
+    'width': '100vw',
+    'max-width': '100%',
+    'height': '100vh',
   });
 
   var width = Math.floor( window.innerWidth ); // size canvas width according to viewport width! redraw again on resize.
