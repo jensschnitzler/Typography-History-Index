@@ -83,15 +83,15 @@ $(function(){
   myTBody.children('tr:not(".empty-row")').each(function(i){ // loop rows
     var tr = $(this);
     //console.log(i);
-    var start = tr.children('td[data-id="start"]').first().text().trim();
+    var start = tr.children('td[data-id="start"]').first().text().trim() || 0;
     //console.log({start});
-    var end = tr.children('td[data-id="end"]').first().text().trim();
+    var end = tr.children('td[data-id="end"]').first().text().trim() || 0;
     //console.log({end});
-    var title = tr.children('td[data-id="title"]').first().text().trim();
+    var title = tr.children('td[data-id="title"]').first().text().trim() || 0;
     //console.log({title});
-    var desc = tr.children('td[data-id="description"]').first().text().trim();
+    var desc = tr.children('td[data-id="description"]').first().text().trim() || 0;
     //console.log({desc});
-    var category = tr.children('td[data-id="category"]').first().text().trim();
+    var category = tr.children('td[data-id="category"]').first().text().trim() || 0;
     //console.log({category});
 
     if( categoryArray.includes(category) == false ){
