@@ -78,7 +78,13 @@ $(function(){
 
   /* --- Prepare Items Array --- */
 
-  const itemsArray = [];
+  const itemsArray = [
+    {id: 1, content: 'item 1', start: new Date(Date.parse('0001-01-04')), group: 1},
+    {id: 2, content: 'item 2', start: new Date(2011,9,23), end: new Date(2012,9,23), group: 1},
+    {id: 3, content: 'item 3', start: new Date(2013,9,23), type: 'point', group: 2}
+  ];
+  // Date.parse('0001-01-04')
+
   const categoryArray = [];
 
   myTBody.children('tr:not(".empty-row")').slice(2,4).each(function(i){ // loop rows
@@ -129,7 +135,10 @@ $(function(){
   console.log({itemsArray});
   console.log({categoryArray});
 
-  var groups = [];
+  var groups = [
+    {id: 1, content: 'Group 1'}, // Optional: a field 'className', 'style', 'order', [properties]
+    {id: 2, content: 'Group 2'},
+  ];
 
   $.each(categoryArray, function( index, val ) {
     //console.log( index + ": " + value );
@@ -145,19 +154,8 @@ $(function(){
   console.log({container});
 
   // Create a DataSet (allows two way data-binding)
-  //var items = new vis.DataSet(itemsArray);
+  var items = new vis.DataSet(itemsArray);
 
-  var items = new vis.DataSet([
-    {id: 1, content: 'item 1', start: new Date(Date.parse('0001-01-04')), group: 1},
-    {id: 2, content: 'item 2', start: new Date(2011,9,23), end: new Date(2012,9,23), group: 1},
-    {id: 3, content: 'item 3', start: new Date(2013,9,23), type: 'point', group: 2}
-  ]);
-  //console.log({items});
-  // Date.parse('0001-01-04')
-  var groups = [
-    {id: 1, content: 'Group 1'}, // Optional: a field 'className', 'style', 'order', [properties]
-    {id: 2, content: 'Group 2'},
-  ];
 
 
   // Configuration for the Timeline
