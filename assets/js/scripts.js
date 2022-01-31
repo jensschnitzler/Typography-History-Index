@@ -6,15 +6,11 @@ function slugify(text){
 }
 
 $(function(){
-
   console.log('Hello!');
-
   const myTable = $('table');
   const myTHead = myTable.children('thead');
   const myTBody = myTable.children('tbody');
-
   const th = myTHead.find('th');
-
   const idArray = [];
 
   /* --- Prepare Table --- */
@@ -87,6 +83,7 @@ $(function(){
 
   // DOM element where the Timeline will be attached
   var container = myVis[0];
+  console.log({container});
 
   // Create a DataSet (allows two way data-binding)
   var items = new vis.DataSet([
@@ -94,14 +91,15 @@ $(function(){
     {id: 2, content: 'item 2', start: new Date(2011,9,23), end: new Date(2012,9,23),group: 1},
     {id: 3, content: 'item 3', start: new Date(2013,9,23), type: 'point',group: 2}
   ]);
+  console.log({items});
 
   // Configuration for the Timeline
   var options = {
     width: '100%',
     height: '100%',
     autoResize: true,
-    start: new Date(0,1,1),
-    end: new Date(2022,1,1),
+    //start: new Date(0,1,1),
+    //end: new Date(2022,1,1),
     //margin: { item: 20 }
   };
 
