@@ -88,6 +88,7 @@ title: Typography History Index
 | 1970 | now  | Tobias Frere-Jones | | Person |
 | 1973 | now  | Peter Biľak | | Person |
 | 1981 | now  | Kris Sowersby | | Person |
+| 1986 | now  | Anja Kaiser | | Person |
 | | | | Typefaces |  |
 | 1496 |      | Bembo | Francesco Griffo | Typeface |
 | 1725 |      | Caslon | William Caslon | Typeface |

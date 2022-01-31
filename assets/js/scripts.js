@@ -6,7 +6,7 @@ function slugify(text){
 }
 
 $(function(){
-  console.log('Hello!');
+  //console.log('Hello!');
   const myTable = $('table');
   const myTHead = myTable.children('thead');
   const myTBody = myTable.children('tbody');
@@ -26,7 +26,7 @@ $(function(){
       idArray.push(id);
     }
   });
-  console.log({idArray});
+  //console.log({idArray});
 
   myTBody.children('tr').each(function(){ // loop rows
     var tr = $(this);
@@ -80,9 +80,6 @@ $(function(){
     'width': 'auto',
     'max-width': '100%',
     'height': 'auto',
-    'position': 'fixed',
-    'top': '0',
-    'right': '0',
     'z-index': '9999',
   });
 
@@ -104,9 +101,9 @@ $(function(){
     var tr = $(this);
     //console.log(i);
     var start = tr.children('td[data-id="start"]').first().text().trim();
-    console.log({start});
+    //console.log({start});
     var end = tr.children('td[data-id="end"]').first().text().trim();
-    console.log({end});
+    //console.log({end});
     var title = tr.children('td[data-id="title"]').first().text().trim();
     //console.log({title});
     var desc = tr.children('td[data-id="description"]').first().text().trim();
@@ -126,19 +123,19 @@ $(function(){
 
       // Start
       start = start.padStart(4, '0'); // add leading zeros, returns 0123
-      console.log({start});
+      //console.log({start});
       //newArray.push({start:start + '-01-01'}); // new Date(start,1,1)
       newArray['start'] = new Date(Date.parse(start + '-01-01'));
 
       // End
-      console.log(end.length);
+      //console.log(end.length);
       if(end.length > 0){
         if(end == 'now'){
           end = yearCurrent; // returns the current year
         } else {
           end = end.padStart(4, '0'); // add leading zeros, returns 0123
         }
-        console.log({end});
+        //console.log({end});
         //newArray.push({end:end + '-01-01'}); // new Date(end,1,1)
         newArray['end'] = new Date(Date.parse(end + '-01-01'));
         newArray['title'] = start + '–' + end + ' ' + title; // tooltip
@@ -157,8 +154,8 @@ $(function(){
     }
   });
 
-  console.log({itemsArray});
-  console.log({categoryArray});
+  //console.log({itemsArray});
+  //console.log({categoryArray});
 
   var groups = [
     //{id: 1, content: 'Group 1'}, // Optional: a field 'className', 'style', 'order', [properties]
@@ -172,14 +169,14 @@ $(function(){
     newNavItem.appendTo(myVisNav);
   });
 
-  console.log({groups});
+  //console.log({groups});
 
   /* --- Vis Nav --- */
 
   $(document).on("click",".vis-nav .switch input",function(event) {
     //event.preventDefault();
     event.stopPropagation();
-    console.log('switch clicked');
+    //console.log('switch clicked');
     var navItem = $(this).parent();
     var id = navItem.data('id');
     $('.vis-timeline').find('.'+id).toggle();
@@ -190,7 +187,7 @@ $(function(){
 
   // DOM element where the Timeline will be attached
   var container = myVis[0];
-  console.log({container});
+  //console.log({container});
 
   // Create a DataSet (allows two way data-binding)
   var items = new vis.DataSet(itemsArray);
@@ -213,6 +210,6 @@ $(function(){
   // Create a Timeline
   const timeline = new vis.Timeline(container, items, groups, options);
 
-  console.log('fin');
+  //console.log('fin');
 
 });
