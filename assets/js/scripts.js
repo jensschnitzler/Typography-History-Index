@@ -145,16 +145,15 @@ $(function(){
   console.log({container});
 
   // Create a DataSet (allows two way data-binding)
-  /*
+  //var items = new vis.DataSet(itemsArray);
+
   var items = new vis.DataSet([
     {id: 1, content: 'item 1', start: new Date(2010,9,23), group: 1},
     {id: 2, content: 'item 2', start: new Date(2011,9,23), end: new Date(2012,9,23), group: 1},
     {id: 3, content: 'item 3', start: new Date(2013,9,23), type: 'point', group: 2}
   ]);
   //console.log({items});
-  */
 
-  var items = new vis.DataSet(itemsArray);
 
   /*
   var groups = [
