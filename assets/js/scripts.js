@@ -83,38 +83,41 @@ $(function(){
   myTBody.children('tr:not(".empty-row")').each(function(i){ // loop rows
     var tr = $(this);
     //console.log(i);
-    var start = tr.children('td[data-id="start"]').first().text().trim() || 0;
+    var start = tr.children('td[data-id="start"]').first().text().trim();
     //console.log({start});
-    var end = tr.children('td[data-id="end"]').first().text().trim() || 0;
+    var end = tr.children('td[data-id="end"]').first().text().trim();
     //console.log({end});
-    var title = tr.children('td[data-id="title"]').first().text().trim() || 0;
+    var title = tr.children('td[data-id="title"]').first().text().trim();
     //console.log({title});
-    var desc = tr.children('td[data-id="description"]').first().text().trim() || 0;
+    var desc = tr.children('td[data-id="description"]').first().text().trim();
     //console.log({desc});
-    var category = tr.children('td[data-id="category"]').first().text().trim() || 0;
+    var category = tr.children('td[data-id="category"]').first().text().trim();
     //console.log({category});
 
-    if( categoryArray.includes(category) == false ){
-      categoryArray.push(category);
-    }
+    if(start != undefined){
 
-    var newArray = [];
-
-    newArray.push({id:i});
-    newArray.push({content:title});
-    newArray.push({start:new Date(start,1,1)});
-
-    if(end != undefined && end.length > 0){
-
-      if(end == 'now'){
-        end = new Date().getFullYear(); // returns the current year
+      if( categoryArray.includes(category) == false ){
+        categoryArray.push(category);
       }
-      newArray.push({end:new Date(end,1,1)});
+
+      var newArray = [];
+
+      newArray.push({id:i});
+      newArray.push({content:title});
+      newArray.push({start:new Date(start,1,1)});
+
+      if(end != undefined && end.length > 0){
+
+        if(end == 'now'){
+          end = new Date().getFullYear(); // returns the current year
+        }
+        newArray.push({end:new Date(end,1,1)});
+      }
+
+      newArray.push({group:category});
+
+      itemsArray.push(newArray);
     }
-
-    newArray.push({group:category});
-
-    itemsArray.push(newArray);
   });
 
   console.log({itemsArray});
