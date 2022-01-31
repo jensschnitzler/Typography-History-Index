@@ -86,7 +86,7 @@ $(function(){
     //console.log(i);
     var start = parseInt( tr.children('td[data-id="start"]').first().text().trim() );
     console.log({start});
-    var end = parseInt( tr.children('td[data-id="end"]').first().text().trim() );
+    var end = tr.children('td[data-id="end"]').first().text().trim();
     console.log({end});
     var title = tr.children('td[data-id="title"]').first().text().trim();
     //console.log({title});
@@ -107,10 +107,12 @@ $(function(){
       newArray.push({content:title});
       newArray.push({start:start + '-01-01'}); // new Date(start,1,1)
 
-      if(end != undefined && end.length > 0){
-
+      console.log(end.length);
+      if(end.length > 0){
         if(end == 'now'){
           end = yearCurrent; // returns the current year
+        } else {
+          end = parseInt( end );
         }
         newArray.push({end:end + '-01-01'}); // new Date(end,1,1)
       }
