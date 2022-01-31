@@ -102,16 +102,17 @@ $(function(){
 
       var newArray = [];
 
-      newArray.push({id:i});
+      newArray.push({id:i+1});
       newArray.push({content:title});
-      newArray.push({start:new Date(start,1,1)});
+      newArray.push({start:start + '-01-01'}); // new Date(start,1,1)
+
 
       if(end != undefined && end.length > 0){
 
         if(end == 'now'){
           end = new Date().getFullYear(); // returns the current year
         }
-        newArray.push({end:new Date(end,1,1)});
+        newArray.push({end:end + '-01-01'}); // new Date(end,1,1)
       }
 
       newArray.push({group:category});
