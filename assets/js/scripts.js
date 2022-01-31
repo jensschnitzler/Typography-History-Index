@@ -176,7 +176,7 @@ $(function(){
 
   /* --- Vis Nav --- */
 
-  $(document).on("click",".vis-nav .switch",function(event) {
+  $(document).on("click",".vis-nav .switch input",function(event) {
     //event.preventDefault();
     event.stopPropagation();
     console.log('switch clicked');
