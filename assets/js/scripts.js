@@ -92,18 +92,25 @@ $(function(){
     var category = tr.children('td[data-id="category"]').text().trim();
     //console.log({category});
 
-    var newArray = {};
+    var newArray = [];
 
     newArray.push({id:i});
     newArray.push({content:title});
     newArray.push({start:new Date(start,1,1)});
 
     if(end != undefined && end.length > 0){
+
+      if(end == 'now'){
+        end = 2022;
+      }
       newArray.push({end:new Date(end,1,1)});
     }
 
+    newArray.push({group:category});
+
     itemsArray.push(newArray);
   });
+  console.log({itemsArray});
 
   /* --- Initiate Vis.js --- */
 
