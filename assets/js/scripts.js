@@ -51,7 +51,7 @@ $(function(){
     });
   });
 
-  /* --- Add Visualization --- */
+  /* --- Add Visualization DOM Elements --- */
 
   const myVisContainer = $('<div/>').addClass('graph-container');
   const myVis = $('<div id="visualization"></div>');
@@ -67,6 +67,23 @@ $(function(){
 
   var width = Math.floor( window.innerWidth ); // size canvas width according to viewport width! redraw again on resize.
   var height = 100;
+
+  /* --- Initiate Vis.js --- */
+
+  myTBody.children('tr:not(".empty-row")').each(function(i){ // loop rows
+    var tr = $(this);
+    console.log(i);
+    var start = tr.children('td[data-id="start"]').text().trim();
+    console.log({start});
+    var end = tr.children('td[data-id="end"]').text().trim();
+    console.log({end});
+    var title = tr.children('td[data-id="title"]').text().trim();
+    console.log({title});
+    var desc = tr.children('td[data-id="description"]').text().trim();
+    console.log({desc});
+    var category = tr.children('td[data-id="category"]').text().trim();
+    console.log({category});
+  });
 
 
 });
