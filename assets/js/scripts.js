@@ -110,6 +110,7 @@ $(function(){
 
       //newArray.push({content:title});
       newArray['content'] = title;
+      newArray['title'] = start + ': ' + title; // tooltip
 
       // Start
       start = start.padStart(4, '0'); // add leading zeros, returns 0123
@@ -178,11 +179,6 @@ $(function(){
     showCurrentTime: false,
     start: new Date(Date.parse('1000-01-01')),
     end: new Date(Date.parse(yearCurrent + '-01-01')),
-    tooltip: {
-      template: function(originalItemData, parsedItemData) {
-        return '<span>${originalItemData.content}</span>';
-      }
-    },
     //margin: { item: 20 }
   };
 
