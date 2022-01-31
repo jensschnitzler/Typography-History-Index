@@ -8,8 +8,6 @@ title: Typography History Index
 | Start | End | Title | Description | Category |
 | --- | --- | --- | --- | --- |
 | | | | Epochs | |
-|    1 |  400 | Roman Imperial Period | | Epoch |
-| 1200 | 1600 | Gothic | | Epoch |
 | 1400 | 1700 | Renaissance & Humanism | | Epoch |
 | 1600 | 1740 | Baroque & Rococo | | Epoch |
 | 1700 | 1800 | Age of Enlightenment & Neoclassicism | | Epoch |

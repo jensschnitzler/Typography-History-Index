@@ -62,15 +62,14 @@ $(function(){
     'margin': 'auto',
     'width': '100vw',
     'max-width': '100%',
-    'height': '100vh',
+    'height': 'auto',
   });
 
   myVis.css({
     'display': 'block',
     'margin': 'auto',
-    'width': '100vw',
-    'max-width': '100%',
-    'height': '100vh',
+    'width': '100%',
+    'min-height': '100vh',
   });
 
   var width = Math.floor( window.innerWidth ); // size canvas width according to viewport width! redraw again on resize.
@@ -174,8 +173,8 @@ $(function(){
     height: '100%',
     autoResize: true,
     showCurrentTime: false,
-    //start: '0000-01-01',
-    //end: yearCurrent + '-01-01',
+    start: new Date(Date.parse('0000-01-01')),
+    end: new Date(Date.parse(yearCurrent + '-01-01')),
     //margin: { item: 20 }
   };
 

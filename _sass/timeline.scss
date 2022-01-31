@@ -1,21 +1,19 @@
 .vis-timeline {
   border: 0;
   font-family: inherit;
-  font-size: 1rem;
+  font-size: 14px;
   background: transparent;
 }
 
 .vis-item {
-  border-color: #F991A3;
-  background-color: pink;
-  font-size: 15pt;
-  color: purple;
-  box-shadow: 5px 5px 20px rgba(128,128,128, 0.5);
+  border-color: black;
+  background-color: transparent;
+  color: inherit;
 }
 
 .vis-item,
 .vis-item.vis-line {
-  border-width: 3px;
+  border-width: 1px;
 }
 
 .vis-item.vis-dot {
