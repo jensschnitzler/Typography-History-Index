@@ -79,4 +79,10 @@
   .vis-group.g_Typeface {
     //opacity: .5;
   }
+
+  .vis-current-time {
+    background-color: transparent;
+    border-left: 1px dotted black;
+    width: 0;
+  }
 }

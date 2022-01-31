@@ -177,7 +177,7 @@ $(function(){
   /* --- Vis Nav --- */
 
   $(document).on("click",".vis-nav .switch",function(event) {
-    event.preventDefault();
+    //event.preventDefault();
     event.stopPropagation();
     console.log('switch clicked');
     var navItem = $(this);
