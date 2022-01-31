@@ -49,7 +49,7 @@ $(function(){
 
   /* --- Add Visualization DOM Elements --- */
 
-  const myVisContainer = $('<div/>').addClass('graph-container');
+  const myVisContainer = $('<div/>').addClass('vis-container');
   const myVis = $('<div id="visualization"></div>');
 
   myTable.wrap(myVisContainer);
@@ -95,7 +95,6 @@ $(function(){
     //console.log({category});
 
     if( categoryArray.includes(category) == false ){
-      //groupsArray.push({id: category, content: category});
       categoryArray.push(category);
     }
 
@@ -121,6 +120,15 @@ $(function(){
   console.log({itemsArray});
   console.log({categoryArray});
 
+  const groups = [];
+
+  $.each(categoryArray, function( index, val ) {
+    //console.log( index + ": " + value );
+    groups.push({id: val, content: val});
+  });
+
+  console.log({groups});
+
   /* --- Initiate Vis.js --- */
 
   // DOM element where the Timeline will be attached
@@ -128,12 +136,23 @@ $(function(){
   console.log({container});
 
   // Create a DataSet (allows two way data-binding)
+  /*
   var items = new vis.DataSet([
     {id: 1, content: 'item 1', start: new Date(2010,9,23), group: 1},
     {id: 2, content: 'item 2', start: new Date(2011,9,23), end: new Date(2012,9,23), group: 1},
     {id: 3, content: 'item 3', start: new Date(2013,9,23), type: 'point', group: 2}
   ]);
   //console.log({items});
+  */
+
+  var items = new vis.DataSet(itemsArray);
+
+  /*
+  var groups = [
+    {id: 1, content: 'Group 1'}, // Optional: a field 'className', 'style', 'order', [properties]
+    {id: 2, content: 'Group 2'},
+  ];
+  */
 
   // Configuration for the Timeline
   var options = {
@@ -145,10 +164,7 @@ $(function(){
     //margin: { item: 20 }
   };
 
-  var groups = [
-    {id: 1, content: 'Group 1'}, // Optional: a field 'className', 'style', 'order', [properties]
-    {id: 2, content: 'Group 2'},
-  ];
+
 
   // Create a Timeline
   var timeline = new vis.Timeline(container, items, groups, options);
