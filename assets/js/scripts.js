@@ -81,7 +81,7 @@ $(function(){
   const itemsArray = [];
   const categoryArray = [];
 
-  myTBody.children('tr:not(".empty-row")').slice(0,2).each(function(i){ // loop rows
+  myTBody.children('tr:not(".empty-row")').slice(2,4).each(function(i){ // loop rows
     var tr = $(this);
     //console.log(i);
     var start = tr.children('td[data-id="start"]').first().text().trim();
@@ -97,19 +97,15 @@ $(function(){
 
     if( start != undefined && start.length > 0 ){
 
-      start = start.padStart(4, '0'); // add leading zeros, returns 0123
-      console.log({start});
-
-      if( categoryArray.includes(category) == false ){
-        categoryArray.push(category);
-      }
-
       var newArray = [];
 
       newArray.push({id:i+1});
       newArray.push({content:title});
+      // Start
+      start = start.padStart(4, '0'); // add leading zeros, returns 0123
+      console.log({start});
       newArray.push({start:start + '-01-01'}); // new Date(start,1,1)
-
+      // End
       console.log(end.length);
       if(end.length > 0){
         if(end == 'now'){
@@ -120,10 +116,13 @@ $(function(){
         console.log({end});
         newArray.push({end:end + '-01-01'}); // new Date(end,1,1)
       }
-
+      // Group
       newArray.push({group:category});
-
+      // ---
       itemsArray.push(newArray);
+      if( categoryArray.includes(category) == false ){
+        categoryArray.push(category);
+      }
     }
   });
 
