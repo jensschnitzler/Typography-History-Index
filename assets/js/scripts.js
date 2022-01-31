@@ -12,6 +12,7 @@ $(function(){
   const myTBody = myTable.children('tbody');
   const th = myTHead.find('th');
   const idArray = [];
+  const yearCurrent = new Date().getFullYear();
 
   /* --- Prepare Table --- */
 
@@ -80,13 +81,13 @@ $(function(){
   const itemsArray = [];
   const categoryArray = [];
 
-  myTBody.children('tr:not(".empty-row")').slice(0,10).each(function(i){ // loop rows
+  myTBody.children('tr:not(".empty-row")').slice(0,2).each(function(i){ // loop rows
     var tr = $(this);
     //console.log(i);
     var start = parseInt( tr.children('td[data-id="start"]').first().text().trim() );
-    //console.log({start});
+    console.log({start});
     var end = parseInt( tr.children('td[data-id="end"]').first().text().trim() );
-    //console.log({end});
+    console.log({end});
     var title = tr.children('td[data-id="title"]').first().text().trim();
     //console.log({title});
     var desc = tr.children('td[data-id="description"]').first().text().trim();
@@ -106,11 +107,10 @@ $(function(){
       newArray.push({content:title});
       newArray.push({start:start + '-01-01'}); // new Date(start,1,1)
 
-
       if(end != undefined && end.length > 0){
 
         if(end == 'now'){
-          end = new Date().getFullYear(); // returns the current year
+          end = yearCurrent; // returns the current year
         }
         newArray.push({end:end + '-01-01'}); // new Date(end,1,1)
       }
@@ -164,11 +164,9 @@ $(function(){
     height: '100%',
     autoResize: true,
     //start: new Date(0,1,1),
-    //end: new Date(2022,1,1),
+    end: yearCurrent + '-01-01',
     //margin: { item: 20 }
   };
-
-
 
   // Create a Timeline
   var timeline = new vis.Timeline(container, items, groups, options);
