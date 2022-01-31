@@ -76,7 +76,6 @@ $(function(){
   });
 
   myVisNav.css({
-    'display': 'block',
     'margin': 'auto',
     'width': 'auto',
     'max-width': '100%',
@@ -84,6 +83,7 @@ $(function(){
     'position': 'fixed',
     'top': '0',
     'right': '0',
+    'z-index': '9999',
   });
 
   var width = Math.floor( window.innerWidth ); // size canvas width according to viewport width! redraw again on resize.
@@ -202,10 +202,10 @@ $(function(){
     width: '100%',
     height: '100%',
     autoResize: true,
-    showCurrentTime: false,
+    //showCurrentTime: false,
     start: new Date(Date.parse('1000-01-01')),
     end: new Date(Date.parse(yearCurrent + '-01-01')),
-    //margin: { item: 20 }
+    margin: { item: 5 }
   };
 
   // Create a Timeline

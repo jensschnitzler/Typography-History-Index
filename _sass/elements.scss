@@ -1,9 +1,20 @@
+.vis-nav {
+  display: flex;
+  flex-flow: row nowrap;
+  &>div {
+    flex: 0 0 auto;
+  }
+}
+
 // Toggle Switch
-.switch {
+label.switch {
   position: relative;
   display: inline-block;
   width: 60px;
   height: 34px;
+  background: black;
+  color: white;
+  cursor: pointer;
 }
 
 .switch input {
@@ -36,25 +47,16 @@
   transition: .4s;
 }
 
-input:checked + .slider {
+input:checked + span {
   background-color: #2196F3;
 }
 
-input:focus + .slider {
+input:focus + span {
   box-shadow: 0 0 1px #2196F3;
 }
 
-input:checked + .slider:before {
+input:checked + span:before {
   -webkit-transform: translateX(26px);
   -ms-transform: translateX(26px);
   transform: translateX(26px);
-}
-
-/* Rounded sliders */
-.slider.round {
-  border-radius: 34px;
-}
-
-.slider.round:before {
-  border-radius: 50%;
 }
