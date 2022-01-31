@@ -153,14 +153,12 @@ $(function(){
     {id: 3, content: 'item 3', start: new Date(2013,9,23), type: 'point', group: 2}
   ]);
   //console.log({items});
-
-
-  /*
+  // Date.parse('0001-01-04')
   var groups = [
     {id: 1, content: 'Group 1'}, // Optional: a field 'className', 'style', 'order', [properties]
     {id: 2, content: 'Group 2'},
   ];
-  */
+
 
   // Configuration for the Timeline
   var options = {
@@ -168,7 +166,7 @@ $(function(){
     height: '100%',
     autoResize: true,
     //start: '0000-01-01',
-    end: yearCurrent + '-01-01',
+    //end: yearCurrent + '-01-01',
     //margin: { item: 20 }
   };
 
