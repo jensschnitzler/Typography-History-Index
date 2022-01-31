@@ -174,7 +174,7 @@ $(function(){
     height: '100%',
     autoResize: true,
     showCurrentTime: false,
-    start: new Date(Date.parse('0000-01-01')),
+    start: new Date(Date.parse('1000-01-01')),
     end: new Date(Date.parse(yearCurrent + '-01-01')),
     //margin: { item: 20 }
   };
