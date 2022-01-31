@@ -87,7 +87,7 @@ $(function(){
 
   const categoryArray = [];
 
-  myTBody.children('tr:not(".empty-row")').slice(0,4).each(function(i){ // loop rows
+  myTBody.children('tr:not(".empty-row")').slice(0,100).each(function(i){ // loop rows
     var tr = $(this);
     //console.log(i);
     var start = tr.children('td[data-id="start"]').first().text().trim();
