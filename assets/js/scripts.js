@@ -53,7 +53,7 @@ $(function(){
   const myVisContainer = $('<div/>').addClass('vis-container');
   const myVis = $('<div id="visualization"></div>');
 
-  myTable.wrap(myVisContainer);
+  myTable.siblings().andSelf().wrapAll(myVisContainer);
   //myVis.prependTo(myVisContainer);
   myVis.insertBefore( myTable.parent().children().first() );
 
@@ -154,7 +154,7 @@ $(function(){
   ]);
   //console.log({items});
   // Date.parse('0001-01-04')
-  var groups = [
+  groups = [
     {id: 1, content: 'Group 1'}, // Optional: a field 'className', 'style', 'order', [properties]
     {id: 2, content: 'Group 2'},
   ];
