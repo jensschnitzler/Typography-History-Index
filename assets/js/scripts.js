@@ -84,7 +84,7 @@ $(function(){
   myTBody.children('tr:not(".empty-row")').slice(0,2).each(function(i){ // loop rows
     var tr = $(this);
     //console.log(i);
-    var start = parseInt( tr.children('td[data-id="start"]').first().text().trim() );
+    var start = tr.children('td[data-id="start"]').first().text().trim();
     console.log({start});
     var end = tr.children('td[data-id="end"]').first().text().trim();
     console.log({end});
@@ -95,7 +95,7 @@ $(function(){
     var category = tr.children('td[data-id="category"]').first().text().trim();
     //console.log({category});
 
-    if( start != undefined && $.isNumeric(start) ){
+    if( start != undefined && start.length > 0 ){
 
       start = start.padStart(4, '0'); // add leading zeros, returns 0123
       console.log({start});
@@ -115,9 +115,8 @@ $(function(){
         if(end == 'now'){
           end = yearCurrent; // returns the current year
         } else {
-          end = parseInt( end );
+          end = end.padStart(4, '0'); // add leading zeros, returns 0123
         }
-        end = end.padStart(4, '0'); // add leading zeros, returns 0123
         console.log({end});
         newArray.push({end:end + '-01-01'}); // new Date(end,1,1)
       }
