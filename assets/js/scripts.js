@@ -183,6 +183,7 @@ $(function(){
     var navItem = $(this).parent();
     var id = navItem.data('id');
     $('.vis-timeline').find('.'+id).toggle();
+    timeline.zoomOut(0);
   });
 
   /* --- Initiate Vis.js --- */
@@ -210,7 +211,7 @@ $(function(){
   };
 
   // Create a Timeline
-  var timeline = new vis.Timeline(container, items, groups, options);
+  const timeline = new vis.Timeline(container, items, groups, options);
 
   console.log('fin');
 
