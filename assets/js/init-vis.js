@@ -1,18 +1,26 @@
 // DOM element where the Timeline will be attached
-  var container = document.getElementById('visualization');
+var container = document.getElementById('visualization');
 
-  // Create a DataSet (allows two way data-binding)
-  var items = new vis.DataSet([
-    {id: 1, content: 'item 1', start: '2014-04-20'},
-    {id: 2, content: 'item 2', start: '2014-04-14'},
-    {id: 3, content: 'item 3', start: '2014-04-18'},
-    {id: 4, content: 'item 4', start: '2014-04-16', end: '2014-04-19'},
-    {id: 5, content: 'item 5', start: '2014-04-25'},
-    {id: 6, content: 'item 6', start: '2014-04-27', type: 'point'}
-  ]);
+// Create a DataSet (allows two way data-binding)
+var items = new vis.DataSet([
+  {id: 1, content: 'item 1', start: new Date(2010,9,23),group: 1},
+  {id: 2, content: 'item 2', start: new Date(2011,9,23), end: new Date(2012,9,23),group: 1},
+  {id: 3, content: 'item 3', start: new Date(2013,9,23), type: 'point',group: 2}
+]);
 
-  // Configuration for the Timeline
-  var options = {};
+// Configuration for the Timeline
+var options = {
+  width: '100%',
+  height: '30px',
+  margin: {
+    item: 20
+  }
+};
 
-  // Create a Timeline
-  var timeline = new vis.Timeline(container, items, options);
+var groups = [
+  {id: 1, content: 'Group 1'}, // Optional: a field 'className', 'style', 'order', [properties]
+  {id: 2, content: 'Group 2'},
+]);
+
+// Create a Timeline
+var timeline = new vis.Timeline(container, items, options);
