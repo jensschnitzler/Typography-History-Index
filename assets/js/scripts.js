@@ -180,7 +180,7 @@ $(function(){
     //event.preventDefault();
     event.stopPropagation();
     console.log('switch clicked');
-    var navItem = $(this);
+    var navItem = $(this).parent();
     var id = navItem.data('id');
     $('.vis-timeline').find('.'+id).toggle();
   });
@@ -193,8 +193,6 @@ $(function(){
 
   // Create a DataSet (allows two way data-binding)
   var items = new vis.DataSet(itemsArray);
-
-
 
   // Configuration for the Timeline
   var options = {
