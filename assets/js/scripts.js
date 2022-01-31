@@ -80,12 +80,12 @@ $(function(){
   const itemsArray = [];
   const categoryArray = [];
 
-  myTBody.children('tr:not(".empty-row")').each(function(i){ // loop rows
+  myTBody.children('tr:not(".empty-row")').slice(0,10).each(function(i){ // loop rows
     var tr = $(this);
     //console.log(i);
-    var start = tr.children('td[data-id="start"]').first().text().trim();
+    var start = parseInt( tr.children('td[data-id="start"]').first().text().trim() );
     //console.log({start});
-    var end = tr.children('td[data-id="end"]').first().text().trim();
+    var end = parseInt( tr.children('td[data-id="end"]').first().text().trim() );
     //console.log({end});
     var title = tr.children('td[data-id="title"]').first().text().trim();
     //console.log({title});
@@ -94,7 +94,7 @@ $(function(){
     var category = tr.children('td[data-id="category"]').first().text().trim();
     //console.log({category});
 
-    if(start != undefined){
+    if( start != undefined && $.isNumeric(start) ){
 
       if( categoryArray.includes(category) == false ){
         categoryArray.push(category);
