@@ -53,7 +53,7 @@ $(function(){
   const myVis = $('<div id="visualization"></div>');
 
   myTable.wrap(myVisContainer);
-  myVis.insertBefore(myTable);
+  myVis.prependTo(myVisContainer);
 
   myVisContainer.css({
     'display': 'block',
@@ -77,20 +77,25 @@ $(function(){
   /* --- Prepare Items Array --- */
 
   const itemsArray = [];
+  const groupsArray = [];
 
   myTBody.children('tr:not(".empty-row")').each(function(i){ // loop rows
     var tr = $(this);
     //console.log(i);
-    var start = tr.children('td[data-id="start"]').text().trim();
+    var start = tr.children('td[data-id="start"]').first().text().trim();
     //console.log({start});
-    var end = tr.children('td[data-id="end"]').text().trim();
+    var end = tr.children('td[data-id="end"]').first().text().trim();
     //console.log({end});
-    var title = tr.children('td[data-id="title"]').text().trim();
+    var title = tr.children('td[data-id="title"]').first().text().trim();
     //console.log({title});
-    var desc = tr.children('td[data-id="description"]').text().trim();
+    var desc = tr.children('td[data-id="description"]').first().text().trim();
     //console.log({desc});
-    var category = tr.children('td[data-id="category"]').text().trim();
+    var category = tr.children('td[data-id="category"]').first().text().trim();
     //console.log({category});
+
+    if( groupsArray.includes(category) == false ){
+      groupsArray.push({id: category, content: category});
+    }
 
     var newArray = [];
 
@@ -101,7 +106,7 @@ $(function(){
     if(end != undefined && end.length > 0){
 
       if(end == 'now'){
-        end = 2022;
+        end = new Date().getFullYear(); // returns the current year
       }
       newArray.push({end:new Date(end,1,1)});
     }
@@ -110,7 +115,9 @@ $(function(){
 
     itemsArray.push(newArray);
   });
+
   console.log({itemsArray});
+  console.log({groupsArray});
 
   /* --- Initiate Vis.js --- */
 
