@@ -105,12 +105,18 @@ $(function(){
 
       var newArray = [];
 
-      newArray.push({id:i+1});
-      newArray.push({content:title});
+      //newArray.push({id:i+1});
+      newArray['id'] = i + 1;
+
+      //newArray.push({content:title});
+      newArray['content'] = title;
+
       // Start
       start = start.padStart(4, '0'); // add leading zeros, returns 0123
       console.log({start});
-      newArray.push({start:start + '-01-01'}); // new Date(start,1,1)
+      //newArray.push({start:start + '-01-01'}); // new Date(start,1,1)
+      newArray['start'] = new Date(Date.parse(start + '-01-01'));
+
       // End
       console.log(end.length);
       if(end.length > 0){
@@ -120,10 +126,12 @@ $(function(){
           end = end.padStart(4, '0'); // add leading zeros, returns 0123
         }
         console.log({end});
-        newArray.push({end:end + '-01-01'}); // new Date(end,1,1)
+        //newArray.push({end:end + '-01-01'}); // new Date(end,1,1)
+        newArray['end'] = new Date(Date.parse(end + '-01-01'));
       }
       // Group
-      newArray.push({group:category});
+      //newArray.push({group:category});
+      newArray['group'] = category;
       // ---
       itemsArray.push(newArray);
       if( categoryArray.includes(category) == false ){
