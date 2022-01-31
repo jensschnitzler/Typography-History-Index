@@ -10,7 +10,7 @@
     border-color: pink;
     background-color: transparent;
     color: black;
-    border-radius: 20px;
+    border-radius: 0px;
     &.vis-range {
       background-color: pink;
     }
@@ -18,7 +18,7 @@
       overflow: visible;
     }
     .vis-item-content {
-      padding: 4px 8px 4px;
+      padding: 2px ​3px 1px;
     }
   }
 
@@ -33,9 +33,9 @@
     // css triangle:
     width: 0;
     height: 0;
-    border-left: 10px solid transparent;
-    border-right: 10px solid transparent;
-    border-top: 10px solid purple;
+    border-left: 7px solid transparent;
+    border-right: 7px solid transparent;
+    border-top: 8px solid purple;
   }
 
   .vis-item.vis-selected {
@@ -46,7 +46,7 @@
     }
     &.vis-point {
       .vis-dot {
-        border-top: 10px solid lime;
+        border-top-color: lime;
       }
     }
   }
@@ -72,11 +72,11 @@
   }
 
   .vis-label {
-    background: red;
-    cursor: pointer;
+    //background: red;
+    //cursor: pointer;
   }
 
   .vis-group.g_Typeface {
-    opacity: .5;
+    //opacity: .5;
   }
 }
