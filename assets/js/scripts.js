@@ -97,6 +97,9 @@ $(function(){
 
     if( start != undefined && $.isNumeric(start) ){
 
+      start = start.padStart(4, '0'); // add leading zeros, returns 0123
+      console.log({start});
+
       if( categoryArray.includes(category) == false ){
         categoryArray.push(category);
       }
@@ -114,6 +117,8 @@ $(function(){
         } else {
           end = parseInt( end );
         }
+        end = end.padStart(4, '0'); // add leading zeros, returns 0123
+        console.log({end});
         newArray.push({end:end + '-01-01'}); // new Date(end,1,1)
       }
 
@@ -165,7 +170,7 @@ $(function(){
     width: '100%',
     height: '100%',
     autoResize: true,
-    //start: new Date(0,1,1),
+    //start: '0000-01-01',
     end: yearCurrent + '-01-01',
     //margin: { item: 20 }
   };
