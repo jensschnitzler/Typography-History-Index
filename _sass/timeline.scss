@@ -10,6 +10,9 @@
   background-color: black;
   color: white;
   border-radius: 20px;
+  & .vis-item-overflow {
+    overflow: visible;
+  }
 }
 
 .vis-item,

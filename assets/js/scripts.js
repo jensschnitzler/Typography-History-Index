@@ -170,12 +170,19 @@ $(function(){
 
   // Configuration for the Timeline
   var options = {
+    stack: true,
+    verticalScroll: true,
     width: '100%',
     height: '100%',
     autoResize: true,
     showCurrentTime: false,
     start: new Date(Date.parse('1000-01-01')),
     end: new Date(Date.parse(yearCurrent + '-01-01')),
+    tooltip: {
+      template: function(originalItemData, parsedItemData) {
+        return '<span>${originalItemData.content}</span>';
+      }
+    },
     //margin: { item: 20 }
   };
 
