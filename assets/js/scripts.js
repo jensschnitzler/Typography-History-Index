@@ -53,7 +53,7 @@ $(function(){
   const myVisContainer = $('<div/>').addClass('vis-container');
   const myVis = $('<div id="visualization"></div>');
 
-  myTable.siblings().andSelf().wrapAll(myVisContainer);
+  myTable.parent().children().wrapAll(myVisContainer);
   //myVis.prependTo(myVisContainer);
   myVis.insertBefore( myTable.parent().children().first() );
 
