@@ -20,7 +20,7 @@ var options = {
 var groups = [
   {id: 1, content: 'Group 1'}, // Optional: a field 'className', 'style', 'order', [properties]
   {id: 2, content: 'Group 2'},
-]);
+];
 
 // Create a Timeline
-var timeline = new vis.Timeline(container, items, options);
+var timeline = new vis.Timeline(container, items, groups, options);
