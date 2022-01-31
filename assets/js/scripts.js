@@ -153,7 +153,7 @@ $(function(){
 
   $.each(categoryArray, function( index, val ) {
     //console.log( index + ": " + value );
-    groups.push({id: val, content: val});
+    groups.push({id: val, content: val , className: 'g_'+val});
   });
 
   console.log({groups});
@@ -173,6 +173,8 @@ $(function(){
   var options = {
     stack: true,
     verticalScroll: true,
+    horizontalScroll: true,
+    zoomKey: 'altKey',
     width: '100%',
     height: '100%',
     autoResize: true,
