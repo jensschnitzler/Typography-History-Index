@@ -77,7 +77,7 @@ $(function(){
   /* --- Prepare Items Array --- */
 
   const itemsArray = [];
-  const groupsArray = [];
+  const categoryArray = [];
 
   myTBody.children('tr:not(".empty-row")').each(function(i){ // loop rows
     var tr = $(this);
@@ -93,8 +93,9 @@ $(function(){
     var category = tr.children('td[data-id="category"]').first().text().trim();
     //console.log({category});
 
-    if( groupsArray.includes(category) == false ){
-      groupsArray.push({id: category, content: category});
+    if( categoryArray.includes(category) == false ){
+      //groupsArray.push({id: category, content: category});
+      categoryArray.push(category);
     }
 
     var newArray = [];
@@ -117,7 +118,7 @@ $(function(){
   });
 
   console.log({itemsArray});
-  console.log({groupsArray});
+  console.log({categoryArray});
 
   /* --- Initiate Vis.js --- */
 
@@ -131,7 +132,7 @@ $(function(){
     {id: 2, content: 'item 2', start: new Date(2011,9,23), end: new Date(2012,9,23), group: 1},
     {id: 3, content: 'item 3', start: new Date(2013,9,23), type: 'point', group: 2}
   ]);
-  console.log({items});
+  //console.log({items});
 
   // Configuration for the Timeline
   var options = {
@@ -151,5 +152,6 @@ $(function(){
   // Create a Timeline
   var timeline = new vis.Timeline(container, items, groups, options);
 
+  console.log('fin');
 
 });
